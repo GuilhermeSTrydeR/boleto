@@ -29,7 +29,7 @@
 							<br>
 						</div>
 						<div class="row">
-							<form method="post" action="samples/unicred.php" control="" class="form-group">
+							<form method="post" action="resources/funcs/validacpf.php" control="" class="form-group">
 								<div class="input_log">
 									
 									<input type="text" class="form__input" onkeyup=validarCpf(this) name="cpf" placeholder="CPF" maxlength="14" autocomplete="on" id="cpf" required>
@@ -87,8 +87,6 @@
 														return true;
 												}
 										}
-
-										
 										</script>
 
 									<div class="row" style="margin-left: 35px;">
