@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<!--
+ * OpenBoleto - Geração de boletos bancários em PHP
+ *
+ * LICENSE: The MIT License (MIT)
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy of this
+ * software and associated documentation files (the "Software"), to deal in the Software
+ * without restriction, including without limitation the rights to use, copy, modify,
+ * merge, publish, distribute, sublicense, and/or sell copies of the Software, and to
+ * permit persons to whom the Software is furnished to do so, subject to the following
+ * conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in all copies
+ * or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED,
+ * INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A
+ * PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
+ * HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
+ * OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
+ * SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+-->
+<html lang="pt-BR">
+<head>
+    <!-- <link rel="stylesheet" type="text/css" href="../css/print.css" media="print"> -->
+    <meta charset="UTF-8">
+    <title><?php echo $cedente; ?></title>
+    <style type="text/css">
+        /* Embed the CSS content here */
+        <?php 
+            include $resource_path . '/css/styles.css';
+            include $resource_path . '../bootstrap/css/bootstrap.css';
+        ?>
+    </style>
+</head>
+<body>
+    <?php
+
+        $pagina = (isset($_GET['pagina'])) ? $_GET['pagina'] : 'lista-boletos';
+      
+        //iniciando a sessao
+        if (session_status() !== PHP_SESSION_ACTIVE) {
+            //Definindo o prazo para a cache expirar em 60 minutos.
+            session_cache_expire(1);
+            session_start();
+        }
+
+        //nessa parte será retirado a mascara dos inputs (cpf, nasc) que foram enviados por POST
+        $cpf = $_POST['cpf'];
+        $cpf = str_replace(".", "", $cpf);
+        $cpf = str_replace("-", "", $cpf);
+
+        $nasc = $_POST['nasc'];
+        $nasc = str_replace("/", "", $nasc);
+
+        // echo $cpf;
+        // echo "<br>";
+        // echo $nasc;
+
+    ?>
+    <div id="navbar_boleto">
+        <nav class="navbar navbar-expand-lg navbar-light" id="noprint">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarText">
+                <ul class="navbar-nav">
+                 <li class="nav-item">
+                     <li class="nav-item">
+                    <center>
+                    <a href="?pagina=lista-boletos">
+                    <img src="../resources/images/back-arrow.png" class="hidden" width="40" height="40" class="d-inline-block align-top" alt="sair">
+                    </a>
+                    </center>
+                    </li>
+                    </li>
+                    <li class="nav-item">
+                    <center>
+                    <img src="../resources/images/printer.png" class="hidden" onClick="window.print()" width="40" height="40" class="d-inline-block align-top" alt="imprimir">
+                    </center>
+                    </li>
+                    <li class="nav-item">
+                        <center>
+                        <a href="/boleto">
+                        <img src="../resources/images/sair.png" onclick="" width="40" height="40" class="d-inline-block align-top" alt="sair">
+                        </a>
+                    </center>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+    <div class="noprint">
+        <br><br><br><br>
+    </div>
+
+    
+
+    <?php
+
+        include("$pagina.php");
+
+    ?>
+
+
+
+
+    <!-- <div id='btn_imprimir' class='noprint'>
+        <center>
+            <?php
+                    echo "<p>Usuário: " . $_POST['cpf'] . "</p>";
+                    echo "<br>";
+                    echo "<h2>Numero do CPF: " . $_POST['nasc'] . "</h2>";
+            ?>
+            <button type="button" onClick="window.print()" class="btn btn-primary btn-lg">
+            imprimir Boleto</button>
+            <form action="\boleto">   
+                <button type="submit" onclick="<?php session_unset(); session_destroy(); ?>" class="btn btn-primary btn-lg">Sair</button>
+            </form>
+        </center>
+    </div> -->
+
+
+<script src="../bootstrap/js/bootstrap.min.js"></script>
+<script src="../js/index.js"></script>
+</body>
+</html>
