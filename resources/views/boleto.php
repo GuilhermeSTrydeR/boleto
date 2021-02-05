@@ -8,7 +8,7 @@
 </style>
 
 
-<div class="container_boleto"> 
+<div class="container_boleto" style="background-color: white;"> 
         <div style="width: 666px">
             <?php if ($imprime_instrucoes_impressao) :?>
             <div class="noprint info">

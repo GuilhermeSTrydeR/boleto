@@ -21,6 +21,8 @@
  * SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
+
+
 @media print {
 
     .noprint {
@@ -219,7 +221,7 @@ body{
 
 body{
     /* background-image: url(../images/bg.jpg); */
-    background-color: rgb(214, 231, 214);
+    background-color: rgb(227, 250, 227);
 
     
 }

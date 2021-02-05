@@ -12,7 +12,6 @@
 	<title>2ª Via Boleto</title>
 </head>
 <body>
-
 	<div id="login-area">
 		<!-- Main Content -->	
 		<div class="container-fluid">
@@ -33,8 +32,6 @@
 								<div class="input_log">
 									
 									<input type="text" class="form__input" onkeyup=validarCpf(this) name="cpf" placeholder="CPF" maxlength="14" autocomplete="on" id="cpf" required>
-									
-		
 									<script> // script para inserir a mascara no campo cpf
 										function validarCpf(entradaDoUsuario) {
 												var cpf = entradaDoUsuario.value; // Passa para a variável 'cpf' o que o usuário digitar no formulário
