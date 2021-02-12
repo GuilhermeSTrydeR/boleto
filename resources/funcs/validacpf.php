@@ -1,19 +1,8 @@
-<?php   
-    $cpf = $_POST['cpf'];
-    $nasc = $_POST['nasc'];
-    $nasc = str_replace("-", "", $nasc);
+<?php
 
-        echo $cpf;
-        echo "<br>";
-        echo $nasc;
-        echo "<br>";
-        
-        if($nasc >= 1000){
 
-            echo "maior que 1000";
 
-        }
-
+  
         $cpf = $_POST['cpf'];
         $nasc = $_POST['nasc'];
 
@@ -47,11 +36,19 @@
         //funcao para validar e entrada do usuario no campo nasc 'data de nascimento' se a data for igual ou menor a 01/01/1900 será retornado falso
         function validaNasc($nasc){
 
-            if($nasc <= 19000101){
+            $data_minima = '19000101';
+            $data_maxima = date('Y/m/d');
+            $data_maxima = str_replace("/", "", $data_maxima);
+
+            $data_minima = intval($data_minima);
+            $data_maxima = intval($data_maxima);
+
+            if(($nasc <= $data_minima) || ($nasc > $data_maxima)){
 
                 return false;
 
             }
+
 
         }
 
