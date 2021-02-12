@@ -7,8 +7,7 @@
     <meta name="author" content="Yinka Enoch Adedokun">
 	<link rel="stylesheet" href="resources/bootstrap/css/bootstrap.css">
 	<link rel="stylesheet" href="resources/css/styles.css">
-	<script src="resources/js/index.js"></script>
-
+	
 	<title>2ª Via Boleto</title>
 </head>
 <body>
@@ -30,75 +29,66 @@
 						<div class="row">
 							<form method="post" action="resources/funcs/validacpf.php" control="" class="form-group">
 								<div class="input_log">
-									
 									<input type="text" class="form__input" onkeyup=validarCpf(this) name="cpf" placeholder="CPF" maxlength="14" autocomplete="on" id="cpf" required>
 									<script> // script para inserir a mascara no campo cpf
 										function validarCpf(entradaDoUsuario) {
 												var cpf = entradaDoUsuario.value; // Passa para a variável 'cpf' o que o usuário digitar no formulário
 												
-					
-												if (cpf.length === 3){                                                        // Quando a string possuir 3 dígitos
-														cpf += ".";                                                                 // Adiciona um hífen
-														cpfMaiuscula = cpf.toUpperCase();                   // Passa a string para letras maiúsculas
-														document.forms[0].cpf.value = cpfMaiuscula; // Coloca a nova string de volta no formulário
-														return true;
+												if (cpf.length === 3){                                                        // Quando a 	  string possuir 3 dígitos
+													cpf += ".";                                                                 // Adiciona um hífen
+													cpfMaiuscula = cpf.toUpperCase();                   // Passa a string para letras maiúsculas
+													document.forms[0].cpf.value = cpfMaiuscula; // Coloca a nova string de volta no formulário
+													return true;
 												}
 
 												if (cpf.length === 7){                                                        // Quando a string possuir 7 dígitos
-														cpf += ".";                                                                 // Adiciona um hífen
-														cpfMaiuscula = cpf.toUpperCase();                   // Passa a string para letras maiúsculas
-														document.forms[0].cpf.value = cpfMaiuscula; // Coloca a nova string de volta no formulário
-														return true;
+													cpf += ".";                                                                 // Adiciona um hífen
+													cpfMaiuscula = cpf.toUpperCase();                   // Passa a string para letras maiúsculas
+													document.forms[0].cpf.value = cpfMaiuscula; // Coloca a nova string de volta no formulário
+													return true;
 												}
 
 												if (cpf.length === 11){                                                        // Quando a string possuir 11 dígitos
-														cpf += "-";                                                                 // Adiciona um hífen
-														cpfMaiuscula = cpf.toUpperCase();                   // Passa a string para letras maiúsculas
-														document.forms[0].cpf.value = cpfMaiuscula; // Coloca a nova string de volta no formulário
-														return true;
+													cpf += "-";                                                                 // Adiciona um hífen
+													cpfMaiuscula = cpf.toUpperCase();                   // Passa a string para letras maiúsculas
+													document.forms[0].cpf.value = cpfMaiuscula; // Coloca a nova string de volta no formulário
+													return true;
 												}
 										}
 									</script>
-									<input type="text" name="nasc" onkeyup=validarNasc(this) class="form__input" placeholder="Data de Nascimento" id="nasc" required maxlength="10">		
-
+									<input type="date" name="nasc" onkeyup=validarNasc(this) class="form__input" placeholder="Data de Nascimento" id="nasc" required maxlength="10">		
 									<script>
 										function validarNasc(entradaDoUsuario) {
-												var nasc = entradaDoUsuario.value; // Passa para a variável 'nasc' o que o usuário digitar no formulário
-												
-												if (nasc.length === 2){                                                        // Quando a string possuir 2 dígitos
-														nasc += "/";                                                                 // Adiciona um hífen
-														nascMaiuscula = nasc.toUpperCase();                   // Passa a string para letras maiúsculas
-														document.forms[0].nasc.value = nascMaiuscula; // Coloca a nova string de volta no formulário
-														return true;
-												}
-												if (nasc.length === 5){                                                        // Quando a string possuir 5 dígitos
-														nasc += "/";                                                                 // Adiciona um hífen
-														nascMaiuscula = nasc.toUpperCase();                   // Passa a string para letras maiúsculas
-														document.forms[0].nasc.value = nascMaiuscula; // Coloca a nova string de volta no formulário
-														return true;
-												}
-												if (nasc.length === 11){                                                        // Quando a string possuir 11 dígitos
-														nasc += "/";                                                                 // Adiciona um hífen
-														nascMaiuscula = nasc.toUpperCase();                   // Passa a string para letras maiúsculas
-														document.forms[0].nasc.value = nascMaiuscula; // Coloca a nova string de volta no formulário
-														return true;
-												}
+											var nasc = entradaDoUsuario.value; // Passa para a variável 'nasc' o que o usuário digitar no formulário
+											
+											if (nasc.length === 2){                                                        // Quando a string possuir 2 dígitos
+												nasc += "/";                                                                 // Adiciona um hífen
+												nascMaiuscula = nasc.toUpperCase();                   // Passa a string para letras maiúsculas
+												document.forms[0].nasc.value = nascMaiuscula; // Coloca a nova string de volta no formulário
+												return true;
+											}
+											if (nasc.length === 5){                                                        // Quando a string possuir 5 dígitos
+												nasc += "/";                                                                 // Adiciona um hífen
+												nascMaiuscula = nasc.toUpperCase();                   // Passa a string para letras maiúsculas
+												document.forms[0].nasc.value = nascMaiuscula; // Coloca a nova string de volta no formulário
+												return true;
+											}
+											if (nasc.length === 11){                                                        // Quando a string possuir 11 dígitos
+												nasc += "/";                                                                 // Adiciona um hífen
+												nascMaiuscula = nasc.toUpperCase();                   // Passa a string para letras maiúsculas
+												document.forms[0].nasc.value = nascMaiuscula; // Coloca a nova string de volta no formulário
+												return true;
+											}
 										}
 										</script>
-
 									<div class="row" style="margin-left: 35px;">
 										<input type="submit" value="Acessar" class="btn" />		
 									</div>
-										
-
-									
 								</div>
 								<!-- <div class="row">
 									<input type="checkbox" name="remember_me" id="remember_me" class="">
 									<label for="remember_me">Lembrar Dados!</label>
 								</div> -->
-								
-							
 							</form>
 						</div>
 						<div class="row">
@@ -109,6 +99,8 @@
 			</div>
 		</div>
 	</div>
-	<!-- Footer -->
+<!-- Footer -->
+<script>verifica_usuario();</script>
+<script src="resources/js/index.js"></script>
 </body>
 </html>

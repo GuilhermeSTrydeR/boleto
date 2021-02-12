@@ -37,6 +37,7 @@
 <body>
     <?php
 
+
         $pagina = (isset($_GET['pagina'])) ? $_GET['pagina'] : 'lista-boletos';
       
         //iniciando a sessao
@@ -46,17 +47,6 @@
             session_start();
         }
 
-        //nessa parte será retirado a mascara dos inputs (cpf, nasc) que foram enviados por POST
-        $cpf = $_POST['cpf'];
-        $cpf = str_replace(".", "", $cpf);
-        $cpf = str_replace("-", "", $cpf);
-
-        $nasc = $_POST['nasc'];
-        $nasc = str_replace("/", "", $nasc);
-
-        // echo $cpf;
-        // echo "<br>";
-        // echo $nasc;
     ?>
     
     <div id="navbar_boleto">
@@ -95,7 +85,6 @@
         <br><br><br><br>
     </div>
 
-    
 
     <?php
 
@@ -122,7 +111,6 @@
     </div> -->
 
 
-<script src="../bootstrap/js/bootstrap.min.js"></script>
-<script src="../js/index.js"></script>
+
 </body>
 </html>

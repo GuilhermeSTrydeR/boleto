@@ -1,3 +1,7 @@
+
+
+
+
 <?php
 
 require '../autoloader.php';
@@ -56,3 +60,6 @@ $boleto = new Unicred(array(
 ));
 
 echo $boleto->getOutput();
+
+?>
+

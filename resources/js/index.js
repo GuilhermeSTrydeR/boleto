@@ -1,17 +1,17 @@
-$( document ).ready(function() {
-    // DOM ready
+// $( document ).ready(function() {
+//     // DOM ready
 
-    // Test data
-    /*
-     * To test the script you should discomment the function
-     * testLocalStorageData and refresh the page. The function
-     * will load some test data and the loadProfile
-     * will do the changes in the UI
-     */
-    // testLocalStorageData();
-    // Load profile if it exits
-    loadProfile();
-});
+//     // Test data
+//     /*
+//      * To test the script you should discomment the function
+//      * testLocalStorageData and refresh the page. The function
+//      * will load some test data and the loadProfile
+//      * will do the changes in the UI
+//      */
+//     // testLocalStorageData();
+//     // Load profile if it exits
+//     loadProfile();
+// });
 
 /**
  * Function that gets the data of the profile in case
@@ -89,3 +89,25 @@ function testLocalStorageData() {
 // }
 
 
+//essa funcao server para verificar na hora de logar se o usuario é realmente aquele
+function verifica_usuario() {
+
+    alert('teste');
+
+   
+    var x;
+    // var elemento = document.getElementById($cpf);
+    var elemento = 'teste';
+    var r=confirm("verifique seus dados abaixo:\nNome: [nome do usuario]\nCPF: " +  elemento + "\n\nesse dados estão corretos?");
+    
+    if (r==true)
+        {
+            x="você pressionou OK!";
+        }
+    else
+        {
+            window.location.href = "/boleto";
+        }
+    
+
+}
