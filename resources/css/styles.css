@@ -416,6 +416,10 @@ img{
 
 }
 
+/* alteracao para mudar a cor do placeholder dos inputs */
+::-webkit-input-placeholder {
+    color: black;
+ }
 
 /* .container-fluid{
 
