@@ -45,7 +45,7 @@
 
         $data_minima = date('Y/m/d');
         $data_minima = str_replace("/", "", $data_minima);
-        $data_minima = ($data_minima - 1210114);
+        $data_minima = ($data_minima - 1300000);
 
         
         $data_maxima = date('Y/m/d');

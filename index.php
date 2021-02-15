@@ -7,9 +7,6 @@
 		header("Location: samples/unicred.php");
 	}
 	
-	$data_minima = date('Y/m/d');
-	$data_minima = str_replace("/", "", $data_minima);
-	echo $data_minima;
 
 ?>
 
