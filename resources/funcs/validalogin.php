@@ -43,8 +43,11 @@
     //funcao para validar e entrada do usuario no campo nasc 'data de nascimento' se a data for igual ou menor a 01/01/1900 será retornado falso
     function validaNasc($nasc){
 
+        //a regra para login foi definida com uma data maxima de nascimento de 130 anos referente ao dia atual
         $data_minima = date('Y/m/d');
         $data_minima = str_replace("/", "", $data_minima);
+
+        //regra definida para login foi de 130 anos, podendo ser alterada a quelauqer momento ex: AAA/MM/DD 100 anos seria: 100/00/00 consequentemente: 1000000
         $data_minima = ($data_minima - 1300000);
 
         
