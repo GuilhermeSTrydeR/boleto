@@ -1,11 +1,14 @@
 <?php
 session_start();
 
+$_SESSION['logado'] = 1;
 
-if(!isset($_SESSION["logado"]))
+if(!isset($_SESSION))
 {
      header("Location: /");
 }
+
+
 
 
 require '../autoloader.php';

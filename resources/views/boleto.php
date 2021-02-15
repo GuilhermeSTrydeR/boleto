@@ -1,3 +1,9 @@
+<?php
+
+    session_start();
+
+?>
+
 <style>
 
     .hidden{

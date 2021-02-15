@@ -1,11 +1,12 @@
 <?php
+    session_start();
 
-    
     //passando para as variaveis o que foi recebido por POST
 
     $cpf = $_POST['cpf'];
     $nasc = $_POST['nasc'];
 
+    //aqui serao atribuidas as variaves nas variaveis de sessao
     $_SESSION['cpf'] = $cpf;
     $_SESSION['nasc'] = $nasc;
 
@@ -14,9 +15,6 @@
     $cpf = str_replace("-", "", $cpf);
 
     $nasc = str_replace("-", "", $nasc);
-
-    //aqui serao atribuidas as variaves nas variaveis de sessao
-    
 
     // funcao de validacao real do cpf aplicando a formula matematica
     function validaCPF($cpf) {
@@ -37,7 +35,6 @@
             }
         }
         return true;
-        
     }
 
     //funcao para validar e entrada do usuario no campo nasc 'data de nascimento' se a data for igual ou menor a 01/01/1900 será retornado falso
@@ -90,9 +87,9 @@
     }
 
     else{
-        session_start();
+        
         $_SESSION['logado'] = 1;
         header('Location: ../../samples/unicred.php');
     }
-        
+    
 ?>    
