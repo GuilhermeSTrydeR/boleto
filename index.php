@@ -1,3 +1,18 @@
+<?php
+
+	session_start();
+
+	if(isset($_SESSION["logado"]))
+	{
+		header("Location: samples/unicred.php");
+	}
+	
+	$data_minima = date('Y/m/d');
+	$data_minima = str_replace("/", "", $data_minima);
+	echo $data_minima;
+
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -7,7 +22,7 @@
     <meta name="author" content="Yinka Enoch Adedokun">
 	<link rel="stylesheet" href="resources/bootstrap/css/bootstrap.css">
 	<link rel="stylesheet" href="resources/css/styles.css">
-	
+
 	<title>2ª Via Boleto</title>
 </head>
 <body>
@@ -27,7 +42,7 @@
 							<br>
 						</div>
 						<div class="row">
-							<form method="post" action="resources/funcs/validacpf.php" control="" class="form-group">
+							<form method="post" action="resources/funcs/validalogin.php" control="" class="form-group">
 								<div class="input_log">
 									<input type="text" class="form__input" onkeyup=validarCpf(this) name="cpf" placeholder="CPF" maxlength="14" autocomplete="on" id="cpf" required>
 									<script> // script para inserir a mascara no campo cpf
@@ -40,14 +55,12 @@
 													document.forms[0].cpf.value = cpfMaiuscula; // Coloca a nova string de volta no formulário
 													return true;
 												}
-
 												if (cpf.length === 7){                                                        // Quando a string possuir 7 dígitos
 													cpf += ".";                                                                 // Adiciona um hífen
 													cpfMaiuscula = cpf.toUpperCase();                   // Passa a string para letras maiúsculas
 													document.forms[0].cpf.value = cpfMaiuscula; // Coloca a nova string de volta no formulário
 													return true;
 												}
-
 												if (cpf.length === 11){                                                        // Quando a string possuir 11 dígitos
 													cpf += "-";                                                                 // Adiciona um hífen
 													cpfMaiuscula = cpf.toUpperCase();                   // Passa a string para letras maiúsculas
@@ -73,7 +86,7 @@
 												document.forms[0].nasc.value = nascMaiuscula; // Coloca a nova string de volta no formulário
 												return true;
 											}
-											if (nasc.length === 11){                                                        // Quando a string possuir 11 dígitos
+											if (nasc.length === 11){                                                      	 // Quando a string possuir 11 dígitos
 												nasc += "/";                                                                 // Adiciona um hífen
 												nascMaiuscula = nasc.toUpperCase();                   // Passa a string para letras maiúsculas
 												document.forms[0].nasc.value = nascMaiuscula; // Coloca a nova string de volta no formulário
@@ -100,7 +113,6 @@
 		</div>
 	</div>
 <!-- Footer -->
-<script>verifica_usuario();</script>
 <script src="resources/js/index.js"></script>
 </body>
 </html>
