@@ -1,12 +1,9 @@
-<?php
-    session_start();
-
-    //passando para as variaveis o que foi recebido por POST
+<?php session_start();
+    
 
     $cpf = $_POST['cpf'];
     $nasc = $_POST['nasc'];
 
-    //aqui serao atribuidas as variaves nas variaveis de sessao
     $_SESSION['cpf'] = $cpf;
     $_SESSION['nasc'] = $nasc;
 
@@ -87,9 +84,9 @@
     }
 
     else{
-        
         $_SESSION['logado'] = 1;
         header('Location: ../../samples/unicred.php');
+        exit();
     }
-    
+
 ?>    

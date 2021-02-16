@@ -1,15 +1,10 @@
-<?php
-session_start();
+<?php session_start();
 
-$_SESSION['logado'] = 1;
+if(!isset($_SESSION['logado'])){
 
-if(!isset($_SESSION))
-{
-     header("Location: /");
+    header("Location: /");
+
 }
-
-
-
 
 require '../autoloader.php';
 
@@ -67,6 +62,7 @@ $boleto = new Unicred(array(
 ));
 
 echo $boleto->getOutput();
+exit();
 
 ?>
 

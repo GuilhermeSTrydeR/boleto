@@ -1,16 +1,17 @@
-<?php
+<?php session_start();
 
-    
-    if (!isset($_SESSION['logado'])) {
-        session_start();
-        include('inicio.php');
+    // $_SESSION['logado'] = 1;
+
+    if (isset($_SESSION['logado'])){
+
+        header("Location: samples/unicred.php");
+        exit();
     }
 
     else{
 
-        header("Location: samples/unicred.php");
+        header("Location: inicio.php");
         exit();
 
     }
-
 ?>

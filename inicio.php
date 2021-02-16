@@ -1,15 +1,11 @@
-<?php
-	session_start();
+<?php session_start(); 
+	if(isset($_SESSION['logado'])){
 
-	if(!isset($_SESSION['logado'])){
-
-		$_SESSION['logado'] = 1;
+		header("Location: /");
 
 	}
 
-
 ?>
-
 <!DOCTYPE html>
 <html lang="pt-br">
 

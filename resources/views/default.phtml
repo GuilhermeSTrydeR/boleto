@@ -1,3 +1,7 @@
+<?php
+    session_start();
+    $cpf = $_SESSION['cpf'];
+?>
 <!--
  * OpenBoleto - Geração de boletos bancários em PHP
  *
@@ -20,19 +24,6 @@
  * OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
  * SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 -->
-
-<?php
-    session_start();
-    
-    if(!isset($_SESSION["logado"]))
-    {
-        header("Location: /");
-    }
-
-    $cpf = $_SESSION['cpf'];
-
-    echo $_SESSION['logado'];
-?>  
 
 
 <!DOCTYPE html>
@@ -73,7 +64,8 @@
                     <li>
 
                         <?php
-                            echo "<p style='color: white; margin-left: -100px;'>Seu CPF: <b>" . $cpf . "</b></p>";
+                            
+                            echo "<p style='color: white; margin-left: -250px;'>Seu CPF: <b>" . $cpf . "</b></p>";
                         ?>
 
                     </li>
@@ -93,7 +85,7 @@
                     </li>
                     <li class="nav-item">
                         <center>
-                        <a href="/resources/funcs/destroi_sessao.php">
+                        <a href="/resources/funcs/destruir_sessao.php">
                         <!-- <a href="/"> -->
                             <img src="../resources/images/sair.png" onclick="" width="40" height="40" class="d-inline-block align-top" alt="sair">
                         </a>
@@ -122,7 +114,7 @@
             <button type="button" onClick="window.print()" class="btn btn-primary btn-lg">
             imprimir Boleto</button>
             <form action="\boleto">   
-                <button type="submit" onclick="<?php session_unset(); session_destroy(); ?>" class="btn btn-primary btn-lg">Sair</button>
+     
             </form>
         </center>
     </div> -->
