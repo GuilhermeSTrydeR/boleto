@@ -1,6 +1,5 @@
-<?php session_start();
-
-    // $_SESSION['logado'] = 1;
+<?php 
+    session_start();
 
     if (isset($_SESSION['logado'])){
 
