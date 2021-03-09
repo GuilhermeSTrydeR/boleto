@@ -36,7 +36,7 @@
 							<br>
 						</div>
 						<div class="row">
-							<form method="post" action="resources/funcs/validalogin.php" control="" class="form-group">
+							<form method="post" action="../resources/funcs/validalogin.php" control="" class="form-group">
 								<div class="input_log">
 									<input type="text" class="form__input" onkeyup=validarCpf(this) name="cpf" placeholder="CPF" maxlength="14" autocomplete="on" id="cpf" required>
 									<script> // script para inserir a mascara no campo cpf
